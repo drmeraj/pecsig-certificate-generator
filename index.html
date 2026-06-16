@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PECSIG Certificate Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #43A047;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #43A047;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2E7D32;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>PECSIG Summer Meet 2026</h1>
+
+    <h3>Certificate Generator</h3>
+
+    <p>Enter your full name</p>
+
+    <input
+        type="text"
+        id="fullname"
+        placeholder="e.g. Meraj Alam Siddiqui"
+    >
+
+    <br>
+
+    <button onclick="generateCertificate()">
+        Generate Certificate
+    </button>
+
+</div>
+
+<script>
+
+function generateCertificate() {
+
+    let name =
+    document.getElementById("fullname").value;
+
+    alert(
+        "Certificate generation for: " + name
+    );
+}
+
+</script>
+
+</body>
+</html>
