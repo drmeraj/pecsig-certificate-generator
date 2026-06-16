@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>PECSIG Summer Meet 2026 Certificate Generator</title>
 
 <style>
@@ -28,27 +27,18 @@ body{
 
 h1{
     color:#43A047;
-    margin-bottom:10px;
-}
-
-h2{
-    margin-bottom:30px;
-}
-
-p{
-    font-size:18px;
 }
 
 input{
     width:90%;
     padding:14px;
     font-size:18px;
-    border:1px solid #cccccc;
+    border:1px solid #ccc;
     border-radius:6px;
 }
 
 button{
-    margin-top:25px;
+    margin-top:20px;
     padding:14px 30px;
     border:none;
     border-radius:6px;
@@ -67,7 +57,6 @@ canvas{
 }
 
 </style>
-
 </head>
 
 <body>
@@ -102,7 +91,7 @@ function generateCertificate() {
     const name =
     document.getElementById("fullname").value.trim();
 
-    if(name === ""){
+    if (!name) {
         alert("Please enter your full name.");
         return;
     }
@@ -111,7 +100,7 @@ function generateCertificate() {
 
     img.src = "certificate_template.png";
 
-    img.onload = function(){
+    img.onload = function () {
 
         const canvas =
         document.getElementById("certificateCanvas");
@@ -122,19 +111,19 @@ function generateCertificate() {
         canvas.width = img.width;
         canvas.height = img.height;
 
-        ctx.drawImage(img,0,0);
+        ctx.drawImage(img, 0, 0);
 
         // NAME
 
         ctx.fillStyle = "#0A1A66";
-        ctx.font = "bold 58px Arial";
+        ctx.font = "bold 60px Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
         ctx.fillText(
             name.toUpperCase(),
             canvas.width / 2,
-            370
+            430
         );
 
         // DOWNLOAD
@@ -143,7 +132,7 @@ function generateCertificate() {
         document.createElement("a");
 
         link.download =
-        name.replaceAll(" ","_") +
+        name.replaceAll(" ", "_") +
         "_PECSIG_Certificate.png";
 
         link.href =
@@ -152,7 +141,7 @@ function generateCertificate() {
         link.click();
     };
 
-    img.onerror = function(){
+    img.onerror = function () {
         alert("certificate_template.png not found.");
     };
 }
@@ -160,5 +149,4 @@ function generateCertificate() {
 </script>
 
 </body>
-
 </html>
