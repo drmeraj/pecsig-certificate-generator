@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>PECSIG Summer Meet 2026 Certificate Generator</title>
 
 <style>
@@ -97,9 +96,9 @@ Generate Certificate
 
 <script>
 
-function generateCertificate(){
+function generateCertificate() {
 
-    let name =
+    const name =
     document.getElementById("fullname").value.trim();
 
     if(name === ""){
@@ -107,42 +106,35 @@ function generateCertificate(){
         return;
     }
 
-    let img = new Image();
+    const img = new Image();
 
     img.src = "certificate_template.png";
 
     img.onload = function(){
 
-        let canvas =
+        const canvas =
         document.getElementById("certificateCanvas");
 
-        let ctx =
+        const ctx =
         canvas.getContext("2d");
 
         canvas.width = img.width;
         canvas.height = img.height;
 
-        ctx.drawImage(
-            img,
-            0,
-            0
-        );
+        ctx.drawImage(img,0,0);
 
         ctx.fillStyle = "#0A1A66";
-
-        ctx.font =
-        "bold 64px Arial";
-
-        ctx.textAlign =
-        "center";
+        ctx.font = "bold 58px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
 
         ctx.fillText(
             name.toUpperCase(),
             canvas.width / 2,
-            canvas.height * 0.50
+            canvas.height * 0.47
         );
 
-        let link =
+        const link =
         document.createElement("a");
 
         link.download =
@@ -163,5 +155,4 @@ function generateCertificate(){
 </script>
 
 </body>
-
 </html>
