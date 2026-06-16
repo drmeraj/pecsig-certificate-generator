@@ -126,20 +126,18 @@ function generateCertificate() {
 
         // NAME SETTINGS
 
-        ctx.fillStyle = "#0A1A66";
-        ctx.font = "bold 58px Arial";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
+        // NAME SETTINGS
 
-        // Adjust ONLY this number if needed
+ctx.fillStyle = "#0A1A66";
+ctx.font = "bold 58px Arial";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
 
-        const nameY = 350;
-
-        ctx.fillText(
-            name.toUpperCase(),
-            canvas.width / 2,
-            nameY
-        );
+ctx.fillText(
+    name.toUpperCase(),
+    canvas.width / 2,
+    285
+);
 
         // DOWNLOAD PNG
 
