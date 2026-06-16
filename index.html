@@ -1,47 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PECSIG Summer Meet 2026 Certificate Generator</title>
 
 <style>
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f5f7fa;
-    text-align:center;
+    margin:0;
     padding:40px;
+    background:#f5f7fa;
+    font-family:Arial,sans-serif;
+    text-align:center;
 }
 
 .container{
-    max-width:600px;
+    max-width:650px;
     margin:auto;
     background:white;
     padding:40px;
     border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
 }
 
 h1{
     color:#43A047;
+    margin-bottom:10px;
+}
+
+h2{
+    margin-bottom:30px;
+}
+
+p{
+    font-size:18px;
 }
 
 input{
     width:90%;
-    padding:12px;
+    padding:14px;
     font-size:18px;
-    margin-top:10px;
+    border:1px solid #cccccc;
+    border-radius:6px;
 }
 
 button{
-    margin-top:20px;
-    padding:14px 28px;
+    margin-top:25px;
+    padding:14px 30px;
     border:none;
+    border-radius:6px;
     background:#43A047;
     color:white;
     font-size:18px;
-    border-radius:6px;
     cursor:pointer;
 }
 
@@ -89,8 +102,8 @@ function generateCertificate(){
     let name =
     document.getElementById("fullname").value.trim();
 
-    if(name===""){
-        alert("Please enter your name");
+    if(name === ""){
+        alert("Please enter your full name.");
         return;
     }
 
@@ -118,28 +131,32 @@ function generateCertificate(){
         ctx.fillStyle = "#0A1A66";
 
         ctx.font =
-        "bold 72px Arial";
+        "bold 64px Arial";
 
         ctx.textAlign =
         "center";
 
         ctx.fillText(
             name.toUpperCase(),
-            canvas.width/2,
-            canvas.height*0.50
+            canvas.width / 2,
+            canvas.height * 0.50
         );
 
         let link =
         document.createElement("a");
 
         link.download =
-        name.replaceAll(" ","_")
-        + "_PECSIG_Certificate.png";
+        name.replaceAll(" ","_") +
+        "_PECSIG_Certificate.png";
 
         link.href =
-        canvas.toDataURL();
+        canvas.toDataURL("image/png");
 
         link.click();
+    };
+
+    img.onerror = function(){
+        alert("certificate_template.png not found.");
     };
 }
 
