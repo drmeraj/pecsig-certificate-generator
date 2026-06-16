@@ -124,15 +124,22 @@ function generateCertificate() {
         ctx.drawImage(img,0,0);
 
         ctx.fillStyle = "#0A1A66";
-        ctx.font = "bold 58px Arial";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
 
-        ctx.fillText(
-            name.toUpperCase(),
-            canvas.width / 2,
-            canvas.height * 0.47
-        );
+ctx.font = "bold 64px Arial";
+
+ctx.textAlign = "center";
+
+ctx.textBaseline = "middle";
+
+ctx.fillText(
+
+    name.toUpperCase(),
+
+    canvas.width / 2,
+
+    canvas.height * 0.52
+
+);
 
         const link =
         document.createElement("a");
