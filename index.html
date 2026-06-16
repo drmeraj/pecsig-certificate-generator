@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PECSIG Summer Meet 2026 Certificate Generator</title>
 
 <style>
@@ -73,22 +74,22 @@ canvas{
 
 <div class="container">
 
-<h1>PECSIG Summer Meet 2026</h1>
+    <h1>PECSIG Summer Meet 2026</h1>
 
-<h2>Certificate Generator</h2>
+    <h2>Certificate Generator</h2>
 
-<p>Please enter your full name</p>
+    <p>Please enter your full name</p>
 
-<input
-type="text"
-id="fullname"
-placeholder="e.g. Meraj Alam Siddiqui">
+    <input
+        type="text"
+        id="fullname"
+        placeholder="e.g. Meraj Alam Siddiqui">
 
-<br>
+    <br>
 
-<button onclick="generateCertificate()">
-Generate Certificate
-</button>
+    <button onclick="generateCertificate()">
+        Generate Certificate
+    </button>
 
 </div>
 
@@ -123,23 +124,23 @@ function generateCertificate() {
 
         ctx.drawImage(img,0,0);
 
+        // NAME SETTINGS
+
         ctx.fillStyle = "#0A1A66";
 
-ctx.font = "bold 64px Arial";
+        ctx.font = "bold 60px Arial";
 
-ctx.textAlign = "center";
+        ctx.textAlign = "center";
 
-ctx.textBaseline = "middle";
+        ctx.textBaseline = "middle";
 
-ctx.fillText(
+        ctx.fillText(
+            name.toUpperCase(),
+            canvas.width / 2,
+            canvas.height * 0.50
+        );
 
-    name.toUpperCase(),
-
-    canvas.width / 2,
-
-    canvas.height * 0.52
-
-);
+        // DOWNLOAD
 
         const link =
         document.createElement("a");
@@ -162,4 +163,5 @@ ctx.fillText(
 </script>
 
 </body>
+
 </html>
