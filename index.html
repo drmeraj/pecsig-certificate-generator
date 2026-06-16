@@ -23,20 +23,38 @@ function generateCertificate() {
 
         ctx.drawImage(img, 0, 0);
 
+        // ==========================================
+        // DEBUG MARKERS
+        // ==========================================
+
+        ctx.fillStyle = "red";
+        ctx.font = "bold 24px Arial";
+        ctx.textAlign = "left";
+
+        for(let y = 100; y <= 900; y += 50){
+            ctx.fillText(y.toString(), 20, y);
+        }
+
+        // ==========================================
         // NAME
+        // ==========================================
 
         ctx.fillStyle = "#0A1A66";
         ctx.font = "bold 58px Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
+        const nameY = 500;
+
         ctx.fillText(
             name.toUpperCase(),
             canvas.width / 2,
-            470
+            nameY
         );
 
+        // ==========================================
         // DOWNLOAD
+        // ==========================================
 
         const link = document.createElement("a");
 
