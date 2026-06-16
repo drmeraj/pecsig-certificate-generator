@@ -125,18 +125,23 @@ function generateCertificate() {
         ctx.drawImage(img,0,0);
 
         // NAME SETTINGS
+
         ctx.fillStyle = "#0A1A66";
-        ctx.font = "bold 60px Arial";
+        ctx.font = "bold 58px Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
+
+        // Adjust ONLY this number if needed
+
+        const nameY = 455;
+
         ctx.fillText(
             name.toUpperCase(),
             canvas.width / 2,
-            canvas.height * 0.551
-);
+            nameY
+        );
 
-
-        // DOWNLOAD
+        // DOWNLOAD PNG
 
         const link =
         document.createElement("a");
@@ -152,7 +157,9 @@ function generateCertificate() {
     };
 
     img.onerror = function(){
-        alert("certificate_template.png not found.");
+        alert(
+            "certificate_template.png not found in GitHub repository."
+        );
     };
 }
 
